@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Breeze-Debug</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script keeplive src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script> 
+    <link rel="stylesheet" type="text/css" href="theme.css" />
+    <script keeplive src="http://cdn.socket.io/socket.io-1.4.3.js"></script>
+    <script keeplive src="http://zmzmdr.com/breeze.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="title">JSBridge Test</div>
+      <ul id="jsbridge-list">
+        <li id="btn-toast" class="item">
+          <span>Toast</span>
+          <i class="iconfont">&#xe600;</i>
+        </li>
+        <li class="item">
+          <span>Sensor</span>
+          <i class="iconfont">&#xe600;</i>
+        </li>
+      </ul>
+      <div class="title">Cache Test</div>
+      <ul id="jsbridge-list">
+        <li class="item">
+          <span>Update All</span>
+          <i class="iconfont">&#xe600;</i>
+        </li>
+        <li class="item">
+          <span>Update Inc</span>
+          <i class="iconfont">&#xe600;</i>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      window.onerror = function(err) {
+        console.log(err);
+      }
+      var toastBtn = document.getElementById('btn-toast');
+      toastBtn.addEventListener('click', function(){
+        console.log('test');
+        lib.Breeze.call('navigation', 'jump', {
+          url: "http://192.168.10.105:8000/jsbridge.html"
+        }, function(s) {
+          console.log('succ');
+        }, function(e) {
+          console.log('fail');
+        });
+      });
+    </script>
+  </body>
+</html>
