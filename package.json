@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "vue": "^1.0.10"
+    
   },
   "devDependencies": {
     "autoprefixer-loader": "^2.0.0",
@@ -16,13 +16,12 @@
     "gulp-webpack": "~1.5.0",
     "json-loader": "~0.5.3",
     "name-loader": "~0.1.0",
+    "css-loader": "~0.21.0",
     "style-loader": "~0.13.0",
     "vinyl-named": "~1.1.0",
+    "gulp-postcss": "^6.0.1",
     "postcss-loader": "~0.8.0",
     "postcss-px2rem": "~0.2.0",
-    "vue-hot-reload-api": "~1.2.1",
-    "vue-html-loader": "~1.0.0",
-    "vue-loader": "~7.2.0",
     "webpack": "~1.12.6"
   },
   "scripts": {

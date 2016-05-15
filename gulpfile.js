@@ -1,8 +1,8 @@
 var gulp = require('gulp')
-var vue = require('vue-loader')
 var webpack = require('gulp-webpack')
 var htmlone = require('gulp-htmlone')
 var named = require('vinyl-named')
+var postcss = require('gulp-postcss')
 var autoprefixer = require('autoprefixer')
 var px2rem = require('postcss-px2rem')
 
@@ -15,7 +15,17 @@ gulp.task('default', ['build'], function () {
   console.log('done')
 })
 
-gulp.task('bundle', function () {
+gulp.task('css', function() {
+  var processors = [
+    px2rem({remUnit: REM_UNIT, baseDpr: BASE_DPR}),
+    autoprefixer({browsers: ['ios_saf >= 7', 'android >= 4']})
+  ];
+  return gulp.src('src/*.css')
+   .pipe(postcss(processors))
+   .pipe(gulp.dest('dist/'))
+})
+
+gulp.task('bundle', ['css'], function () {
   return gulp.src(mapFiles(appList, 'js'))
     .pipe(named())
     .pipe(webpack(getConfig()))
@@ -45,16 +55,8 @@ function getConfig(opt) {
     },
     module: {
       loaders: [
-        {test: /\.vue$/, loader: 'vue'},
         {test: /\.json$/, loader: 'json'}
       ]
-    },
-    vue: {
-      postcss: [
-        // img4dpr({dpr: 3, q: 'q50', s: 's150'}),
-        px2rem({remUnit: REM_UNIT, baseDpr: BASE_DPR})
-      ],
-      autoprefixer: {browsers: ['ios_saf >= 7', 'android >= 4']}
     },
     devtool: 'source-map'
   }

@@ -10,50 +10,34 @@
                     
 .iconfont {
   font-family:"iconfont" !important;
-  font-size:16px;
+  font-size:32px;/*px*/
   font-style:normal;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-width: 0.4px;/*px*/
   -moz-osx-font-smoothing: grayscale;
 }
 
-[data-dpr="2"] .iconfont {
-    font-size: 32px;
-}
-
-[data-dpr="3"] .iconfont {
-    font-size: 48px;
-}
-
 .container {
-	width: 10rem;
-    margin: 0 auto;
-    background: #fff;
-    font-size: 18px;
-}
-
-[data-dpr="2"] .container {
-    font-size: 36px;
-}
-
-[data-dpr="3"] .container {
-    font-size: 54px;
+	width: 750px;
+  margin: 0 auto;
+  background: #fff;
+  font-size: 36px;/*px*/
 }
 
 .title {
 	background: #eee;
-	padding-top: 0.33333rem;
-	padding-bottom: 0.33333rem;
-	padding-left: 0.26667rem;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 20px;
 }
 
 #jsbridge-list .item {
 	display: flex;
     justify-content: space-between;
-    padding-top: 0.33333rem;
-	padding-bottom: 0.33333rem;
-    margin-left: 0.26667rem;
-    padding-right: 0.26667rem;
+    padding-top: 25px;
+	padding-bottom: 25px;
+    margin-left: 20px;
+    padding-right: 20px;
 }
 
 
